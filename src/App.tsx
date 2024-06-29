@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import RootLayout from "./components/Layout/RootLayout";
 import Product from "./pages/Product";
 import Contact from "./pages/Contact";
-
+import CartContent from "./components/Cart/CartContent";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -16,6 +16,7 @@ const router = createBrowserRouter(
         <Route index element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/:id" element={<Product />} />
+        <Route path="/cartcontent" element={<CartContent />} />
       </Route>
     </Route>
   )

@@ -1,3 +1,4 @@
+import { useProductStore } from "../store/cart";
 import { useParams } from "react-router-dom";
 import { Props } from "../components/Card/Card";
 import { data, imageString } from "../components/constants/constants";
@@ -14,6 +15,7 @@ const Product = () => {
   const [show, setShow] = useState(false);
   /*   const [count, setCount] = useState<number>(0); */
   const { count, decrement, increment } = useCountStore();
+  const { cart, add } = useProductStore();
 
   const pokemon = data.find((pokemon) => pokemon.id === id);
 
@@ -40,6 +42,7 @@ const Product = () => {
               <p>{count}</p>
               <button onClick={increment}>+</button>
             </div>
+            <button onClick={() => add(pokemon)}>ADD TO CART</button>
           </>
         )}
         <button onClick={handleClick}>{buttonText}</button>
